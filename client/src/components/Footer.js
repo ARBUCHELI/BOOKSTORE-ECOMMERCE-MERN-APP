@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-section">
           <h4>About Me</h4>
-          <p>Freelancer Full-Stack Web Developer with more than 15 years of experienceo.</p>
+          <p>Freelancer Full-Stack Web Developer with more than 15 years of experience.</p>
           <a className="link-company" href="https://bucheli-web-personal-portfolio-website.netlify.app/" target="_blank" rel="noopener noreferrer">Bucheli Software Development</a>
         </div>
         <div className="footer-section">
