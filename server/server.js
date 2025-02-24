@@ -8,8 +8,8 @@ const backendUrl = "https://bookstore-ecommerce-mern-app.onrender.com";
 const mongoURI = process.env.MONGO_URI || 'mongodb+srv://radioseattle:LgYndtSOqpSrfYdF@cluster0.95tuz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose.connect(mongoURI, {
-	useNewUrlParser: true, // No longer necessary with MongoDB driver v4+
-	useUnifiedTopology: true, // No longer necessary with MongoDB driver v4+
+	useNewUrlParser: true, 
+	useUnifiedTopology: true, 
   })
 	.then(() => console.log('MongoDB connected'))
 	.catch((err) => console.log('Error connecting to MongoDB:', err));
@@ -19,15 +19,24 @@ app.use(express.json());
 const corsOptions = {
 	origin: function (origin, callback) {
 	  if (!origin || origin === 'https://bookstore-ecommerce-mern-app.onrender.com' || origin === 'https://bookstore-ecommerce-mern-app-1.onrender.com') {
-		callback(null, true);  
+		callback(null, true);  // Allow the request
 	  } else {
-		callback(new Error('Not allowed by CORS'));  
+		callback(new Error('Not allowed by CORS'));  // Reject the request
 	  }
 	},
 	methods: ['GET', 'POST', 'PUT', 'DELETE'],
   };
   app.use(cors(corsOptions));
   
+
+const bookSchema = new mongoose.Schema({
+	title: String,
+	author: String,
+	genre: String,
+	description: String,
+	price: Number,
+	image: String,
+});
 
 const Book = mongoose.model('Book', bookSchema);
 
