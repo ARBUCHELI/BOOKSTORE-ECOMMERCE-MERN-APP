@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const cors = require('cors');
-const backendUrl = "https://your-backend-service.onrender.com";
+const backendUrl = "https://bookstore-ecommerce-mern-app.onrender.com";
 
 const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/bookstore';
 
