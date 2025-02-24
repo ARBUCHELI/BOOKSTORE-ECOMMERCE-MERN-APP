@@ -3,6 +3,8 @@
 This project is a Full-Stack Web application that simulates a online bookster, and that uses the MERN stack (MongoDB, Express, React.js, and Node.js) to
 implement the Back-End (Node.js, Express, MongoDB), and the Front-End (React.js, JavaScript).
 
+![Bookstore ECommerce MERN App](https://bucheli-web-personal-portfolio-website.netlify.app/images-projects/mern-book-store-app.jpg)
+
 In the /api/books endpoint, the user can retrieve the list of available books in the bookstore.
 
 In the Front-End, the user can filtera, and sort the list of books using different criteria, such as Price Range
