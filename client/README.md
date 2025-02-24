@@ -1,12 +1,47 @@
-# Getting Started with Create React App
+# BOOKSTORE ECOMMERCE MERN APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a Full-Stack Web application that simulates a online bookster, and that uses the MERN stack (MongoDB, Express, React.js, and Node.js) to
+implement the Back-End (Node.js, Express, MongoDB), and the Front-End (React.js, JavaScript).
+
+In the /api/books endpoint, the user can retrieve the list of available books in the bookstore.
+
+In the Front-End, the user can filtera, and sort the list of books using different criteria, such as Price Range
+(Min. Price - Max. Price), and filter by type (Philosophy, History, Fiction).
+
+In the Front-End, the user can use buttons to add the books of his/her preference to the shopping cart, and the
+total price of the purchase will be calculated and displayed on th top of the screen.
+
+A counter will show the user the amount of items added to the shopping cart.
+
+The user also can remove items from the shopping cart using another button.
+
+The applications is visually appealing, uses a beautiful balance of colors, and is responsibe for being used in different screen sizes.
 
 ## Available Scripts
 
-In the project directory, you can run:
+There are two folders in the project directory:
 
-### `npm start`
+Client (That includes the code for the Frot-End of the application).
+
+Server (That includes the code for the Back-End or Server and database management of the application).
+
+## Running the Application
+It's necessary to Install Node.js and npm to run the application.
+
+Install the dependencies using:
+npm install
+
+### Running the Server
+Use the terminal to navigate to the server folder and use this command: mongod.
+Open another terminal and run this command: node server.js
+
+#### `node server.js`
+Open [http://localhost:5000](http://localhost:5000) to view it in your browser.
+
+### Running the Client
+Use the terminal to navigate to the client folder and use this command: npm start
+
+#### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -14,57 +49,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# AUTHOR:
+Andres R. Bucheli (Andres Fernando Regalado Bucheli)
