@@ -30,10 +30,16 @@ app.use(express.json());
 	origin: process.env.FRONTEND_URL || 'http://localhost:3000',
   };
   app.use(cors(corsOptions));*/
-  const corsOptions = {
+  /*const corsOptions = {
 	origin: '*',  // Allow all origins for testing, replace with a specific domain in production
 	methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  };*/
+
+  const corsOptions = {
+	origin: process.env.FRONTEND_URL || 'https://bookstore-ecommerce-mern-app-1.onrender.com',
+	methods: ['GET', 'POST', 'PUT', 'DELETE'],
   };
+  
   
   app.use(cors(corsOptions));
 /*const corsOptions = {

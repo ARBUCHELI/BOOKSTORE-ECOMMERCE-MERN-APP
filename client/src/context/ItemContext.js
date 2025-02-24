@@ -11,7 +11,7 @@ function CustomItemContext({ children }) {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const response = await fetch(`${backendUrl}`);
+			const response = await fetch(`${backendUrl}/`);
 			//const response = await fetch(`${backendUrl}/api/books`);
 			const products = await response.json();
 			console.log(products);
