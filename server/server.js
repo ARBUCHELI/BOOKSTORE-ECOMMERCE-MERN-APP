@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 5000;
 const cors = require('cors');
 const backendUrl = "https://bookstore-ecommerce-mern-app.onrender.com";
 
-const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/bookstore';
+const mongoURI = process.env.MONGO_URI || 'mongodb+srv://radioseattle:LgYndtSOqpSrfYdF@cluster0.95tuz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose.connect(mongoURI, {
 	useNewUrlParser: true, // No longer necessary with MongoDB driver v4+
@@ -15,7 +15,12 @@ mongoose.connect(mongoURI, {
 	.catch((err) => console.log('Error connecting to MongoDB:', err));
 
 app.use(express.json());
-app.use(cors()); 
+//app.use(cors());
+const corsOptions = {
+	origin: 'https://bookstore-ecommerce-mern-app-1.onrender.com/',
+	methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  };
+  app.use(cors(corsOptions)); 
 
 const bookSchema = new mongoose.Schema({
 	title: String,
