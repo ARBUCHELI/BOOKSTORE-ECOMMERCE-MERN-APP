@@ -91,7 +91,7 @@ const seedDatabase = async () => {
 
 seedDatabase();
 
-/*app.get('/api/books', async (req, res) => {
+app.get('/api/books', async (req, res) => {
 	try {
 	  console.log("Fetching books...");
 	  const allBooks = await Book.find();
@@ -99,20 +99,6 @@ seedDatabase();
 	  res.json(allBooks);
 	} catch (error) {
 	  console.error("Error fetching books:", error);
-	  res.status(500).json({ error: 'Internal Server Error' });
-	}
-  });*/
-
-  app.get('/', async (req, res) => {
-	try {
-	  // Fetch books data from the /api/books route
-	  const response = await fetch(`${process.env.BACKEND_URL || 'http://localhost:5000'}/api/books`);
-	  const books = await response.json();
-  
-	  // Send the books data to the frontend
-	  res.json(books);
-	} catch (error) {
-	  console.error("Error fetching books in home route:", error);
 	  res.status(500).json({ error: 'Internal Server Error' });
 	}
   });
