@@ -3,16 +3,8 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const cors = require('cors');
-//const backendUrl = "https://bookstore-ecommerce-mern-app.onrender.com";
-
 const mongoURI = process.env.MONGO_URI || 'mongodb+srv://radioseattle:LgYndtSOqpSrfYdF@cluster0.95tuz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
-/*mongoose.connect(mongoURI, {
-	useNewUrlParser: true, 
-	useUnifiedTopology: true, 
-  })
-	.then(() => console.log('MongoDB connected'))
-	.catch((err) => console.log('Error connecting to MongoDB:', err));*/
 mongoose.connect(mongoURI, { 
 		useNewUrlParser: true, 
 		useUnifiedTopology: true 
@@ -25,15 +17,6 @@ mongoose.connect(mongoURI, {
   });
 
 app.use(express.json());
-//app.use(cors());
-/*const corsOptions = {
-	origin: process.env.FRONTEND_URL || 'http://localhost:3000',
-  };
-  app.use(cors(corsOptions));*/
-  /*const corsOptions = {
-	origin: '*',  // Allow all origins for testing, replace with a specific domain in production
-	methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  };*/
 
   const corsOptions = {
 	origin: process.env.FRONTEND_URL || 'https://bookstore-ecommerce-mern-app-1.onrender.com',
@@ -41,19 +24,7 @@ app.use(express.json());
   };
   
   
-  app.use(cors(corsOptions));
-/*const corsOptions = {
-	origin: function (origin, callback) {
-	  if (!origin || origin === 'https://bookstore-ecommerce-mern-app.onrender.com' || origin === 'https://bookstore-ecommerce-mern-app-1.onrender.com') {
-		callback(null, true);  // Allow the request
-	  } else {
-		callback(new Error('Not allowed by CORS'));  // Reject the request
-	  }
-	},
-	methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  };
-  app.use(cors(corsOptions));*/
-  
+app.use(cors(corsOptions));
 
 const bookSchema = new mongoose.Schema({
 	title: String,
@@ -97,24 +68,14 @@ const seedDatabase = async () => {
 
 seedDatabase();
 
-/*app.get('/api/books', async (req, res) => {
-	try {
-	  console.log("Fetching books...");
-	  const allBooks = await Book.find();
-	  console.log("Books fetched:", allBooks);
-	  res.json(allBooks);
-	} catch (error) {
-	  console.error("Error fetching books:", error);
-	  res.status(500).json({ error: 'Internal Server Error' });
-	}
-  });*/
 
-  app.get('/', async (req, res) => {
+
+app.get('/', async (req, res) => {
     try {
         console.log("Fetching books...");
         const allBooks = await Book.find();
         console.log("Books fetched:", allBooks);
-        res.json(allBooks); // Return the books directly from the home route
+        res.json(allBooks); 
     } catch (error) {
         console.error("Error fetching books:", error);
         res.status(500).json({ error: 'Internal Server Error' });

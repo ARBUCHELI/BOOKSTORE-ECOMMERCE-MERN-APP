@@ -1,7 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 
 const itemContext = createContext();
-//const backendUrl = "https://bookstore-ecommerce-mern-app.onrender.com";
 const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
 function CustomItemContext({ children }) {
 	const [products, setProducts] = useState([]);
@@ -12,7 +11,6 @@ function CustomItemContext({ children }) {
 	useEffect(() => {
 		const fetchData = async () => {
 			const response = await fetch(`${backendUrl}/`);
-			//const response = await fetch(`${backendUrl}/api/books`);
 			const products = await response.json();
 			console.log(products);
 			setProducts(products);
