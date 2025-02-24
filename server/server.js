@@ -3,12 +3,16 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const cors = require('cors');
+const backendUrl = "https://your-backend-service.onrender.com";
 
-mongoose.connect('mongodb://localhost:27017/bookstore', { 
-	useNewUrlParser: true, 
-	useUnifiedTopology: true 
+const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/bookstore';
+
+mongoose.connect(mongoURI, {
+	useNewUrlParser: true, // No longer necessary with MongoDB driver v4+
+	useUnifiedTopology: true, // No longer necessary with MongoDB driver v4+
   })
-  
+	.then(() => console.log('MongoDB connected'))
+	.catch((err) => console.log('Error connecting to MongoDB:', err));
 
 app.use(express.json());
 app.use(cors()); 
@@ -55,7 +59,7 @@ const seedDatabase = async () => {
 
 seedDatabase();
 
-app.get('/api/books', async (req, res) => {
+app.get(`${backendUrl}/api/books`, async (req, res) => {
 	try {
 		const allBooks = await Book.find();
 		res.json(allBooks);
