@@ -17,7 +17,7 @@ mongoose.connect(mongoURI, {
 app.use(express.json());
 //app.use(cors());
 const corsOptions = {
-	origin: 'https://bookstore-ecommerce-mern-app-1.onrender.com/',
+	origin: 'https://bookstore-ecommerce-mern-app.onrender.com',
 	methods: ['GET', 'POST', 'PUT', 'DELETE'],
   };
   app.use(cors(corsOptions)); 
