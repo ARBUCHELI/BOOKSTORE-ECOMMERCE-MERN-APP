@@ -91,7 +91,7 @@ const seedDatabase = async () => {
 
 seedDatabase();
 
-app.get('/api/books', async (req, res) => {
+/*app.get('/api/books', async (req, res) => {
 	try {
 	  console.log("Fetching books...");
 	  const allBooks = await Book.find();
@@ -101,7 +101,20 @@ app.get('/api/books', async (req, res) => {
 	  console.error("Error fetching books:", error);
 	  res.status(500).json({ error: 'Internal Server Error' });
 	}
-  });
+  });*/
+
+  app.get('/', async (req, res) => {
+    try {
+        console.log("Fetching books...");
+        const allBooks = await Book.find();
+        console.log("Books fetched:", allBooks);
+        res.json(allBooks); // Return the books directly from the home route
+    } catch (error) {
+        console.error("Error fetching books:", error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
 
 app.listen(PORT, () => {
 	console.log(`Server is running on port ${PORT}`);
