@@ -17,19 +17,17 @@ mongoose.connect(mongoURI, {
 app.use(express.json());
 //app.use(cors());
 const corsOptions = {
-	origin: 'https://bookstore-ecommerce-mern-app.onrender.com',
+	origin: function (origin, callback) {
+	  if (!origin || origin === 'https://bookstore-ecommerce-mern-app.onrender.com' || origin === 'https://bookstore-ecommerce-mern-app-1.onrender.com') {
+		callback(null, true);  
+	  } else {
+		callback(new Error('Not allowed by CORS'));  
+	  }
+	},
 	methods: ['GET', 'POST', 'PUT', 'DELETE'],
   };
-  app.use(cors(corsOptions)); 
-
-const bookSchema = new mongoose.Schema({
-	title: String,
-	author: String,
-	genre: String,
-	description: String,
-	price: Number,
-	image: String,
-});
+  app.use(cors(corsOptions));
+  
 
 const Book = mongoose.model('Book', bookSchema);
 
